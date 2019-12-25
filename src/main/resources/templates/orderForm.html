@@ -14,7 +14,7 @@
 <form method="POST" th:action="@{/orders}" th:object="${order}">
     <h1>Zamów przygotowane taco!</h1>
 
-    <img th:src="@{/images/tacos.jpg }"/>
+    <img th:src="@{/images/tacos.png}"/>
     <a th:href="@{/design}" id="another">Przygotuj kolejne taco</a><br/>
 
     <div th:if="${#fields.hasErrors()}">
@@ -26,6 +26,7 @@
     <h3>Adres dostarczenia taco...</h3>
     <label for="name">Imię i nazwisko: </label>
     <input type="text" th:field="*{name}"/>
+
     <span class="validationError"
           th:if="${#fields.hasErrors('name')}"
           th:errors="*{name}">Błąd imienia i nazwiska</span>
@@ -37,7 +38,6 @@
     <span class="validationError"
           th:if="${#fields.hasErrors('street')}"
           th:errors="*{street}">Błąd nazwy ulicy</span>
-
     <br/>
 
     <label for="city">Miejscowość: </label>
@@ -46,7 +46,6 @@
     <span class="validationError"
           th:if="${#fields.hasErrors('city')}"
           th:errors="*{city}">Błąd nazwy miejscowości</span>
-
     <br/>
 
     <label for="state">Województwo: </label>
@@ -55,7 +54,6 @@
     <span class="validationError"
           th:if="${#fields.hasErrors('state')}"
           th:errors="*{state}">Błąd nazwy województwa</span>
-
     <br/>
 
     <label for="zip">Kod pocztowy: </label>
@@ -64,18 +62,15 @@
     <span class="validationError"
           th:if="${#fields.hasErrors('zip')}"
           th:errors="*{zip}">Błąd kodu pocztowego</span>
-
     <br/>
 
     <h3>Sposób płatności...</h3>
-
     <label for="ccNumber">Numer karty kredytowej: </label>
     <input type="text" th:field="*{ccNumber}"/>
 
     <span class="validationError"
           th:if="${#fields.hasErrors('ccNumber')}"
           th:errors="*{ccNumber}">Numer karty kredytowej</span>
-
     <br/>
 
     <label for="ccExpiration">Data ważności: </label>
@@ -84,7 +79,6 @@
     <span class="validationError"
           th:if="${#fields.hasErrors('ccExpiration')}"
           th:errors="*{ccExpiration}">Numer karty kredytowej</span>
-
     <br/>
 
     <label for="ccCVV">Kod CVV: </label>
@@ -93,12 +87,9 @@
     <span class="validationError"
           th:if="${#fields.hasErrors('ccCVV')}"
           th:errors="*{ccCVV}">Numer karty kredytowej</span>
-
     <br/>
 
     <input type="submit" value="Złóż zamówienie"/>
 </form>
-</form>
-
 </body>
 </html>
