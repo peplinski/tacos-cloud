@@ -1,4 +1,4 @@
-package pl.tacos.controller;
+package pl.tacos.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

@@ -1,4 +1,4 @@
-package pl.tacos.controller;
+package pl.tacos.web.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
