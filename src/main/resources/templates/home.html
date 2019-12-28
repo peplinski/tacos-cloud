@@ -10,5 +10,8 @@
 <body>
 <h1>Witaj w ...</h1>
 <img th:src="@{/images/tacos.jpg}"/>
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" value="Wyloguj się"/>
+</form>
 </body>
 </html>

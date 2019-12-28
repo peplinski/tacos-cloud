@@ -10,6 +10,9 @@
     <link rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
 <body>
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" value="Wyloguj się"/>
+</form>
 <!--/*@thymesVar type="pl.tacos.model.Order"*/-->
 <form method="POST" th:action="@{/orders}" th:object="${order}">
     <h1>Zamów przygotowane taco!</h1>
