@@ -1,6 +1,6 @@
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 30vw;
+    height: 30vw;
 }
 
 div.ingredient-group:nth-child(odd) {

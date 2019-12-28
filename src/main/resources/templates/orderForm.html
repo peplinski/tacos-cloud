@@ -14,7 +14,7 @@
 <form method="POST" th:action="@{/orders}" th:object="${order}">
     <h1>Zamów przygotowane taco!</h1>
 
-    <img th:src="@{/images/tacos.png}"/>
+    <img class="logo" th:width="30vw" th:height="30vw" th:src="@{/images/tacos.png}"/>
     <a th:href="@{/design}" id="another">Przygotuj kolejne taco</a><br/>
 
     <div th:if="${#fields.hasErrors()}">

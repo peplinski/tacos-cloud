@@ -41,7 +41,7 @@ public class Order implements Serializable {
     private String state;
 
     @NotBlank(message = "Podanie kodu pocztowego jest obowiązkowe")
-    private String zip;
+    private String deliveryZip;
 
     // @CreditCardNumber(message="To nie jest prawidłowy numer karty kredytowej")
     private String ccNumber;
