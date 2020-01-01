@@ -1,6 +1,6 @@
 package pl.tacos.model;
 
-import com.sun.javafx.beans.IDProperty;
+
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.CreditCardNumber;
@@ -28,22 +28,25 @@ public class Order implements Serializable {
 
     private Date placedAt;
 
+    @ManyToOne
+    private User user;
+
     @NotBlank(message = "Podanie imienia i nazwiska jest obowiązkowe")
-    private String name;
+    private String deliveryName;
 
     @NotBlank(message = "Podanie ulicy jest obowiązkowe")
-    private String street;
+    private String deliveryStreet;
 
     @NotBlank(message = "Podanie miejscowości jest obowiązkowe")
-    private String city;
+    private String deliveryCity;
 
     @NotBlank(message = "Podanie województwa jest obowiązkowe")
-    private String state;
+    private String deliveryState;
 
     @NotBlank(message = "Podanie kodu pocztowego jest obowiązkowe")
     private String deliveryZip;
 
-    // @CreditCardNumber(message="To nie jest prawidłowy numer karty kredytowej")
+    //@CreditCardNumber(message = "To nie jest prawidłowy numer karty kredytowej")
     private String ccNumber;
 
     @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
@@ -56,12 +59,12 @@ public class Order implements Serializable {
     @ManyToMany(targetEntity = Taco.class)
     private List<Taco> tacos = new ArrayList<>();
 
-    public void addDesign(Taco design){
+    public void addDesign(Taco design) {
         this.tacos.add(design);
     }
 
     @PrePersist
-    void placedAt(){
+    void placedAt() {
         this.placedAt = new Date();
     }
 }

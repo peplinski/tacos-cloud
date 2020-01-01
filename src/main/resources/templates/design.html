@@ -22,7 +22,6 @@
         <div class="ingredient-group" id="wraps">
 
             <h3>Wybierz rodzaj mąki:</h3>
-            <!--/*@thymesVar id="wrap" type="pl.tacos.model.Ingredient"*/-->
             <div th:each="ingredient : ${wrap}">
                 <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                 <span th:text="${ingredient.name}">SKŁADNIK</span><br/>
@@ -31,7 +30,6 @@
 
         <div class="ingredient-group" id="proteins">
             <h3>Wybierz mięso:</h3>
-            <!--/*@thymesVar id="wrap" type="pl.tacos.model.Ingredient"*/-->
             <div th:each="ingredient : ${protein}">
                 <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                 <span th:text="${ingredient.name}">SKŁADNIK</span><br/>
@@ -65,7 +63,6 @@
 
     <div>
         <h3>Nadaj nazwę przygotowanemu taco:</h3>
-        <!--/*@thymesVar id="name" type="pl.tacos.model.Ingredient"*/-->
         <input type="text" th:field="*{name}"/>
         <br/>
         <button>Wyślij swoje zamówienie</button>

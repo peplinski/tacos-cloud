@@ -15,14 +15,16 @@ public class Taco {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date createdAt;
 
     @NotNull
     @Size(min = 5, message = "Nazwa musi składać się z przynajmniej pięciu znaków")
     private String name;
+
+    private Date createdAt;
+
     @ManyToMany(targetEntity = Ingredient.class)
     @Size(min = 1, message = "Musisz wybrać przynajmniej jeden składnik")
-    private List<String> ingredients;
+    private List<Ingredient> ingredients;
 
     @PrePersist
     void createdAt() {
