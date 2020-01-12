@@ -1,4 +1,4 @@
-package pl.tacos.web.controller;
+package pl.tacos.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
-@SessionAttributes("order")
 @RequestMapping("/design")
+@SessionAttributes("order")
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
@@ -54,7 +54,6 @@ public class DesignTacoController {
 
     @GetMapping
     public String showDesignForm(Model model, Principal principal) {
-        log.info("   --- Przygotowanie taco");
         List<Ingredient> ingredients = new ArrayList<>();
         ingredientRepo.findAll().forEach(i -> ingredients.add(i));
 
@@ -76,8 +75,6 @@ public class DesignTacoController {
             @Valid Taco taco, Errors errors,
             @ModelAttribute Order order) {
 
-        log.info("   --- Zapisywanie taco");
-
         if (errors.hasErrors()) {
             return "design";
         }
@@ -95,4 +92,5 @@ public class DesignTacoController {
                 .filter(x -> x.getType().equals(type))
                 .collect(Collectors.toList());
     }
+
 }

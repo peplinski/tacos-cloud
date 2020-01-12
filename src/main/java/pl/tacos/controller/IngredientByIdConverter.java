@@ -1,5 +1,7 @@
-package pl.tacos.web.controller;
+package pl.tacos.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.tacos.model.Ingredient;
 import pl.tacos.repository.IngredientRepository;
 
@@ -7,10 +9,12 @@ import org.springframework.core.convert.converter.Converter;
 
 import java.util.Optional;
 
+@Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
+
     private IngredientRepository ingredientRepo;
 
-
+    @Autowired
     public IngredientByIdConverter(IngredientRepository ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
     }
@@ -21,4 +25,6 @@ public class IngredientByIdConverter implements Converter<String, Ingredient> {
         return optionalIngredient.isPresent() ?
                 optionalIngredient.get() : null;
     }
+
 }
+

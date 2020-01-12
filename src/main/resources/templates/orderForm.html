@@ -8,15 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aplikacja Taco Cloud</title>
     <link rel="stylesheet" th:href="@{/styles.css}"/>
-</head>
-<body>
-<!--/*@thymesVar type="pl.tacos.model.Order"*/-->
-<form method="POST" th:action="@{/logout}" id="logoutForm">
-    <input type="submit" value="Wyloguj się"/>
-</form>
-<!--/*@thymesVar type="pl.tacos.model.Order"*/-->
-<form method="POST" th:action="@{/orders}" th:object="${order}"
-      id="orderForm">
+</head><body>
+
+<form method="POST" th:action="@{/orders}" th:object="${order}" id="orderForm">
     <h1>Zamów przygotowane taco!</h1>
 
     <img th:src="@{/images/TacoCloud.png}"/>
@@ -93,5 +87,6 @@
 
     <input type="submit" value="Złóż zamówienie"/>
 </form>
+
 </body>
 </html>

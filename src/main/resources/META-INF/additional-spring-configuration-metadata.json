@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "taco.orders.page-size",
+    "type": "java.lang.String",
+    "description": "Określa maksymalną liczbę zamówień wyświetlanych na liście."
+  },
+  {
+    "name": "taco.discount.codes",
+    "type": "java.util.Map<String, Integer>",
+    "description": "Mapowanie kodów rabatowych."
+  }
+]}

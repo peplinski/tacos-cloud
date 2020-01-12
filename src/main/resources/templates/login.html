@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Logowanie</h1>
-<img th:width="30vw" th:height="30vw" class="logo" th:src="@{/images/tacos.jpg}"/>
+<img th:src="@{/images/tacos.jpg}"/>
 
 <div th:if="${error}">
     Logowanie nieudane. Sprawdź poprawność nazwy użytkownika i hasła.
@@ -19,14 +19,14 @@
 <p>Jesteś nowy? Kliknij
     <a th:href="@{/register}">tutaj</a>, aby się zarejestrować.</p>
 
-
+<!-- tag::thAction[] -->
 <form method="POST" th:action="@{/login}" id="loginForm">
-
+    <!-- end::thAction[] -->
     <label for="username">Nazwa użytkownika:  </label>
-    <input type="text" name="username" id="username" /><br/>
+    <input type="text" name="username"/><br/>
 
     <label for="password">Hasło:  </label>
-    <input type="password" name="password" id="password" /><br/>
+    <input type="password" name="password"/><br/>
 
     <input type="submit" value="Zaloguj się"/>
 </form>

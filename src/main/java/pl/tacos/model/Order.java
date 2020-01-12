@@ -16,14 +16,13 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "Taco_Order")
-@RequiredArgsConstructor
+@Table(name="Taco_Order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     private Date placedAt;
@@ -31,32 +30,32 @@ public class Order implements Serializable {
     @ManyToOne
     private User user;
 
-    @NotBlank(message = "Podanie imienia i nazwiska jest obowiązkowe")
+    @NotBlank(message="Podanie imienia i nazwiska jest obowiązkowe")
     private String deliveryName;
 
-    @NotBlank(message = "Podanie ulicy jest obowiązkowe")
+    @NotBlank(message="Podanie ulicy jest obowiązkowe")
     private String deliveryStreet;
 
-    @NotBlank(message = "Podanie miejscowości jest obowiązkowe")
+    @NotBlank(message="Podanie miejscowości jest obowiązkowe")
     private String deliveryCity;
 
-    @NotBlank(message = "Podanie województwa jest obowiązkowe")
+    @NotBlank(message="Podanie województwa jest obowiązkowe")
     private String deliveryState;
 
-    @NotBlank(message = "Podanie kodu pocztowego jest obowiązkowe")
+    @NotBlank(message="Podanie kodu pocztowego jest obowiązkowe")
     private String deliveryZip;
 
-    //@CreditCardNumber(message = "To nie jest prawidłowy numer karty kredytowej")
+    //@CreditCardNumber(message="To nie jest prawidłowy numer karty kredytowej")
     private String ccNumber;
 
-    @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
-            message = "Wartość musi być w formacie MM/RR")
+    @Pattern(regexp="^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
+            message="Wartość musi być w formacie MM/RR")
     private String ccExpiration;
 
-    @Digits(integer = 3, fraction = 0, message = "Nieprawidłowy kod CVV")
+    @Digits(integer=3, fraction=0, message="Nieprawidłowy kod CVV")
     private String ccCVV;
 
-    @ManyToMany(targetEntity = Taco.class)
+    @ManyToMany(targetEntity=Taco.class)
     private List<Taco> tacos = new ArrayList<>();
 
     public void addDesign(Taco design) {
@@ -67,4 +66,5 @@ public class Order implements Serializable {
     void placedAt() {
         this.placedAt = new Date();
     }
+
 }

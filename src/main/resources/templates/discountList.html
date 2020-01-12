@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Aplikacja Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+
+<h1>Kody rabatowe:</h1>
+
+<ul>
+    <li th:each="kod : ${codes}">
+        Użyj kodu <b>"<span th:text="${code.key}"></span>"</b>, aby otrzymać
+        rabat <span th:text="${code.value}"></span>% na składane zamówienie.</li>
+</ul>
+
+</body>
+
+</html>
